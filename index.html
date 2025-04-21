@@ -3,8 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+<style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #f0f0f0;
+      position: relative;
+      overflow: hidden;
+    }
+
+
+    #hat {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      cursor: pointer;
+    }
+
+    #bunny {
+      position: absolute;
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      display: none;
+      transition: transform 0.5s ease-out;
+    }
+
+    #bunny.show {
+      display: block;
+      transform: translateX(-50%) translateY(-30px);
+    }
+  </style>
 </head>
 <body>
 
+  <img id="bunny" src="bunny.png" alt="Bunny" />
+  <img id="hat" src="hat.jpg" alt="Hat" />
+<script>
+    var hat = document.getElementById('hat');
+var bunny = document.getElementById('bunny');
+
+hat.addEventListener('click', function() {
+    bunny.classList.add('show');
+});
+</script>
 </body>
 </html>
