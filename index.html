@@ -2,22 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Hackathon</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div>
-    <p>Title</p>
+<div class="title-div">
+    <p>Magic.com</p>
 </div>
 <div class="image-container">
     <img src="bunny.png" id="bunny" class="bunny">
-    <img src="hat.jpg" id="hat" class="hat">
+    <img src="hat.png" id="hat" class="hat">
 </div>
+
+
 <script>
     let hat = document.getElementById('hat');
     let bunny = document.getElementById('bunny');
 
-    hat.addEventListener('click', function() {
+    hat.addEventListener('click', function()
+    {
+        bunny.classList.remove('show');
+
+        // Force Reflow
+        void bunny.offsetWidth;
         bunny.classList.add('show');
     });
 </script>
